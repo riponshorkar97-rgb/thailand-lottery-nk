@@ -385,3 +385,19 @@ mostCommon("twoUp");
 
 document.getElementById("common2down").innerText =
 mostCommon("twoDown");
+// Sidebar Toggle
+
+function toggleMenu(){
+
+let menu =
+document.getElementById("sideMenu");
+
+let overlay =
+document.getElementById("overlay");
+
+
+menu.classList.toggle("active");
+
+overlay.classList.toggle("active");
+
+}
