@@ -1,11 +1,96 @@
 {
-  "lastUpdated": "",
+  "lastUpdated": "2026-07-16",
   "latest": {
-    "date": "",
-    "firstPrize": "",
-    "threeDigitFront": [],
-    "threeDigitLast": [],
-    "twoDigitLast": ""
+    "date": "2026-07-16",
+    "firstPrize": "639214",
+    "threeUp": "214",
+    "twoUp": "14",
+    "twoDown": "71"
   },
-  "previous": []
+  "previous": [
+    {
+      "date": "2026-07-16",
+      "firstPrize": "639214",
+      "threeUp": "214",
+      "twoUp": "14",
+      "twoDown": "71"
+    },
+    {
+      "date": "2026-07-01",
+      "firstPrize": "751495",
+      "threeUp": "495",
+      "twoUp": "95",
+      "twoDown": "62"
+    },
+    {
+      "date": "2026-06-16",
+      "firstPrize": "287184",
+      "threeUp": "184",
+      "twoUp": "84",
+      "twoDown": "48"
+    },
+    {
+      "date": "2026-06-01",
+      "firstPrize": "173770",
+      "threeUp": "770",
+      "twoUp": "70",
+      "twoDown": "95"
+    },
+    {
+      "date": "2026-05-16",
+      "firstPrize": "107387",
+      "threeUp": "387",
+      "twoUp": "87",
+      "twoDown": "08"
+    },
+    {
+      "date": "2026-05-02",
+      "firstPrize": "536077",
+      "threeUp": "077",
+      "twoUp": "77",
+      "twoDown": "43"
+    },
+    {
+      "date": "2026-04-16",
+      "firstPrize": "309612",
+      "threeUp": "612",
+      "twoUp": "12",
+      "twoDown": "77"
+    },
+    {
+      "date": "2026-04-01",
+      "firstPrize": "292514",
+      "threeUp": "514",
+      "twoUp": "14",
+      "twoDown": "47"
+    },
+    {
+      "date": "2026-03-16",
+      "firstPrize": "833009",
+      "threeUp": "009",
+      "twoUp": "09",
+      "twoDown": "64"
+    },
+    {
+      "date": "2026-03-01",
+      "firstPrize": "820866",
+      "threeUp": "866",
+      "twoUp": "66",
+      "twoDown": "06"
+    },
+    {
+      "date": "2026-02-16",
+      "firstPrize": "340563",
+      "threeUp": "563",
+      "twoUp": "63",
+      "twoDown": "07"
+    },
+    {
+      "date": "2026-02-01",
+      "firstPrize": "174629",
+      "threeUp": "629",
+      "twoUp": "29",
+      "twoDown": "48"
+    }
+  ]
 }
