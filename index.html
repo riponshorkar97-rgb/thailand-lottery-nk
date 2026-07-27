@@ -19,7 +19,9 @@
 <!-- Menu Button -->
 
 <div class="menu-btn" onclick="toggleMenu()">
+
 ☰
+
 </div>
 
 
@@ -28,19 +30,46 @@
 
 <div class="side-menu" id="sideMenu">
 
-<h3>🇹🇭 Thailand Lottery NK</h3>
 
-<a href="#home" onclick="toggleMenu()">🏠 Home</a>
+<div class="menu-logo">
 
-<a href="#result" onclick="toggleMenu()">📅 Results</a>
-
-<a href="#checker" onclick="toggleMenu()">🔍 Checker</a>
-
-<a href="#stats" onclick="toggleMenu()">📊 Statistics</a>
-
-<a href="#about" onclick="toggleMenu()">ℹ️ About</a>
+🇹🇭 Thailand Lottery NK
 
 </div>
+
+
+<a href="#home" onclick="toggleMenu()">
+🏠 Home
+</a>
+
+
+<a href="#result" onclick="toggleMenu()">
+🎯 Latest Result
+</a>
+
+
+<a href="#checker" onclick="toggleMenu()">
+🔍 Number Checker
+</a>
+
+
+<a href="#history" onclick="toggleMenu()">
+📅 Lottery History
+</a>
+
+
+<a href="#stats" onclick="toggleMenu()">
+📊 Statistics
+</a>
+
+
+<a href="#about" onclick="toggleMenu()">
+ℹ️ About
+</a>
+
+
+</div>
+
 
 
 
@@ -50,11 +79,22 @@
 
 
 
+
+
+<!-- Header -->
+
 <header>
 
-<h1>🇹🇭 Thailand Lottery NK</h1>
 
-<p>Lottery Result Checker & Statistics</p>
+<h1>
+🇹🇭 Thailand Lottery NK
+</h1>
+
+
+<p>
+Lottery Result Checker & Smart Statistics
+</p>
+
 
 </header>
 
@@ -62,10 +102,20 @@
 
 
 
-<section id="home" class="hero">
 
 
-<h2>Latest Thailand Lottery Result</h2>
+<!-- Home -->
+
+<section id="home">
+
+
+<div class="hero-card">
+
+
+<h2>
+Latest Thailand Lottery Result
+</h2>
+
 
 
 <div class="result-card">
@@ -77,51 +127,61 @@ Draw Date
 
 
 
+
 <div class="number-box">
 
-<p>🥇 1st Prize</p>
+<span>🥇 1st Prize</span>
 
-<span id="firstPrize">
+<strong id="firstPrize">
 ------
-</span>
+</strong>
 
 </div>
 
 
 
-<div class="number-box">
+
+<div class="number-grid">
+
+
+<div class="small-number">
 
 <p>3 Up</p>
 
-<span id="threeUp">
+<b id="threeUp">
 ---
-</span>
+</b>
 
 </div>
 
 
 
-
-<div class="number-box">
+<div class="small-number">
 
 <p>2 Up</p>
 
-<span id="twoUp">
+<b id="twoUp">
 --
-</span>
+</b>
 
 </div>
 
 
 
-
-<div class="number-box">
+<div class="small-number">
 
 <p>2 Down</p>
 
-<span id="twoDown">
+<b id="twoDown">
 --
-</span>
+</b>
+
+</div>
+
+
+
+</div>
+
 
 </div>
 
@@ -134,6 +194,11 @@ Draw Date
 
 
 
+
+
+
+
+<!-- Checker -->
 
 
 <section id="checker">
@@ -145,6 +210,9 @@ Draw Date
 
 
 
+<div class="checker-card">
+
+
 <input 
 type="text"
 id="lotteryNumber"
@@ -154,13 +222,18 @@ placeholder="Enter lottery number">
 
 <button onclick="checkNumber()">
 
-Check Number
+CHECK RESULT
 
 </button>
 
 
 
-<p id="checkResult"></p>
+<div id="checkResult">
+
+</div>
+
+
+</div>
 
 
 </section>
@@ -170,6 +243,10 @@ Check Number
 
 
 
+
+
+
+<!-- History -->
 
 
 <section id="result">
@@ -180,12 +257,9 @@ Check Number
 </h2>
 
 
-
 <div id="history">
 
-
 </div>
-
 
 
 </section>
@@ -195,53 +269,58 @@ Check Number
 
 
 
+
+
+
+<!-- Statistics -->
 
 
 <section id="stats">
 
 
 <h2>
-📊 Statistics
+📊 Statistics Dashboard
 </h2>
 
 
 
+<div class="stats-container">
 
-<div class="stats-box">
 
+<div class="stats-card">
 
-<p>
-Total Draws:
+<h3>Total Draws</h3>
 
 <b id="totalDraws">
 0
 </b>
 
-</p>
+</div>
 
 
 
-<p>
+<div class="stats-card">
 
-Most Common 2Up:
+<h3>Most Common 2Up</h3>
 
 <b id="common2up">
 --
 </b>
 
-</p>
+</div>
 
 
 
-<p>
 
-Most Common 2Down:
+<div class="stats-card">
+
+<h3>Most Common 2Down</h3>
 
 <b id="common2down">
 --
 </b>
 
-</p>
+</div>
 
 
 
@@ -256,6 +335,10 @@ Most Common 2Down:
 
 
 
+
+
+
+<!-- About -->
 
 
 <section id="about">
@@ -266,18 +349,19 @@ About
 </h2>
 
 
-
 <p>
 
-Thailand Lottery NK is a result checking website.
+Thailand Lottery NK is a modern lottery result checking platform.
+
+<br><br>
 
 This website is not affiliated with the official Thailand Government Lottery Office.
 
 </p>
 
 
-
 </section>
+
 
 
 
@@ -289,13 +373,12 @@ This website is not affiliated with the official Thailand Government Lottery Off
 
 
 <p>
-
 © 2026 Thailand Lottery NK
-
 </p>
 
 
 </footer>
+
 
 
 
