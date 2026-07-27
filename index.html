@@ -601,33 +601,17 @@ Independent Lottery Results & Information Platform
 <script>
 
 
-const lotteryResults = [
+let lotteryResults = [];
 
-  {
-    date: "1 June 2026",
-    firstPrize: "123456",
-    threeDigitFront: ["789", "456"],
-    threeDigitLast: ["321", "654"],
-    twoDigitLast: "89"
-  },
-
-  {
-    date: "16 May 2026",
-    firstPrize: "654321",
-    threeDigitFront: ["123", "987"],
-    threeDigitLast: ["456", "789"],
-    twoDigitLast: "12"
-  },
-
-  {
-    date: "2 May 2026",
-    firstPrize: "789012",
-    threeDigitFront: ["234", "567"],
-    threeDigitLast: ["890", "345"],
-    twoDigitLast: "67"
-  }
-
-];
+fetch("results.json")
+  .then(response => response.json())
+  .then(data => {
+    lotteryResults = data.previous;
+    console.log("Results loaded successfully");
+  })
+  .catch(error => {
+    console.log("Result loading error:", error);
+  });
 
 
 function searchResults(){
