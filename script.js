@@ -1,5 +1,3 @@
-// Thailand Lottery Database
-
 let lotteryResults = [
 
 {
@@ -46,48 +44,101 @@ twoDown:"38"
 
 
 
-// Show Latest Result
+
+// Animated Number Show
+
+function animateNumber(element,value){
+
+let count = 0;
+
+let interval = setInterval(()=>{
+
+element.innerText = count;
+
+count++;
+
+if(count > Number(value)){
+
+clearInterval(interval);
+
+element.innerText=value;
+
+element.style.animation="numberGlow 1s";
+
+}
+
+},10);
+
+}
+
+
+
+
+
+// Latest Result
 
 let latest = lotteryResults[0];
+
 
 document.getElementById("drawDate").innerText =
 "Draw Date: " + latest.date;
 
-document.getElementById("firstPrize").innerText =
-latest.firstPrize;
 
-document.getElementById("threeUp").innerText =
-latest.threeUp;
 
-document.getElementById("twoUp").innerText =
-latest.twoUp;
+animateNumber(
+document.getElementById("firstPrize"),
+latest.firstPrize
+);
 
-document.getElementById("twoDown").innerText =
-latest.twoDown;
+
+animateNumber(
+document.getElementById("threeUp"),
+latest.threeUp
+);
+
+
+animateNumber(
+document.getElementById("twoUp"),
+latest.twoUp
+);
+
+
+animateNumber(
+document.getElementById("twoDown"),
+latest.twoDown
+);
+
+
 
 
 
 // Number Checker
 
+
 function checkNumber(){
+
 
 let number =
 document.getElementById("lotteryNumber").value.trim();
+
 
 let result =
 document.getElementById("checkResult");
 
 
-if(!number){
 
-result.style.color="#ff6874";
-result.innerText="Please enter a lottery number.";
-return;
+result.innerHTML="🔍 Checking...";
 
-}
+
+result.style.color="#ffd700";
+
+
+
+setTimeout(()=>{
 
 
 let messages=[];
+
 
 
 lotteryResults.forEach(draw=>{
@@ -102,6 +153,7 @@ messages.push(
 }
 
 
+
 if(number===draw.threeUp){
 
 messages.push(
@@ -111,6 +163,7 @@ messages.push(
 }
 
 
+
 if(number===draw.twoUp){
 
 messages.push(
@@ -118,6 +171,7 @@ messages.push(
 );
 
 }
+
 
 
 if(number===draw.twoDown){
@@ -133,91 +187,200 @@ messages.push(
 
 
 
+
+
 if(messages.length>0){
 
+
 result.style.color="#39d98a";
-result.innerHTML=messages.join("<br>");
+
+
+result.innerHTML =
+"✨ Congratulations ✨<br><br>"+
+messages.join("<br>");
+
+result.style.transform="scale(1.1)";
+
+
+setTimeout(()=>{
+
+result.style.transform="scale(1)";
+
+},300);
+
+
 
 }
+
+
 
 else{
 
+
 result.style.color="#ff6874";
-result.innerText="Number not found.";
+
+
+result.innerText=
+"❌ Number not found";
+
 
 }
 
+
+
+},800);
+
+
+
 }
 
 
 
-// Show History
+
+
+
+
+// History Animation
+
 
 let historyBox =
 document.getElementById("history");
 
 
-lotteryResults.forEach(draw=>{
+
+lotteryResults.forEach((draw,index)=>{
 
 
 historyBox.innerHTML += `
 
-<div class="history-card">
+<div class="history-card"
+style="animation-delay:${index*0.15}s">
 
-<h3>${draw.date}</h3>
+
+<h3>📅 ${draw.date}</h3>
+
 
 <p>🥇 1st Prize:
-<b>${draw.firstPrize}</b></p>
+<b>${draw.firstPrize}</b>
+</p>
+
 
 <p>3Up:
-<b>${draw.threeUp}</b></p>
+<b>${draw.threeUp}</b>
+</p>
+
 
 <p>2Up:
-<b>${draw.twoUp}</b></p>
+<b>${draw.twoUp}</b>
+</p>
+
 
 <p>2Down:
-<b>${draw.twoDown}</b></p>
+<b>${draw.twoDown}</b>
+</p>
+
 
 </div>
 
 `;
 
-});
-
-
-
-
-// Statistics
-
-
-document.getElementById("totalDraws").innerText =
-lotteryResults.length;
-
-
-
-function mostCommon(type){
-
-let count={};
-
-
-lotteryResults.forEach(item=>{
-
-let num=item[type];
-
-count[num]=(count[num]||0)+1;
 
 });
 
 
-return Object.keys(count).reduce((a,b)=>
-count[a]>count[b]?a:b
-);
+
+
+
+
+
+// Statistics Counter Animation
+
+
+function counter(id,target){
+
+
+let element =
+document.getElementById(id);
+
+
+let num=0;
+
+
+let timer=setInterval(()=>{
+
+
+num++;
+
+
+element.innerText=num;
+
+
+
+if(num>=target){
+
+clearInterval(timer);
 
 }
 
 
+},100);
+
+
+}
+
+
+
+
+
+counter(
+"totalDraws",
+lotteryResults.length
+);
+
+
+
+
+
+
+// Most Common Number
+
+
+function mostCommon(type){
+
+
+let count={};
+
+
+
+lotteryResults.forEach(item=>{
+
+
+let num=item[type];
+
+
+count[num]=(count[num]||0)+1;
+
+
+});
+
+
+
+return Object.keys(count).reduce((a,b)=>
+
+count[a]>count[b]?a:b
+
+);
+
+
+}
+
+
+
+
+
 document.getElementById("common2up").innerText =
 mostCommon("twoUp");
+
 
 
 document.getElementById("common2down").innerText =
