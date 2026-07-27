@@ -401,3 +401,36 @@ menu.classList.toggle("active");
 overlay.classList.toggle("active");
 
 }
+// Side Menu Control
+
+function toggleMenu(){
+
+    const sideMenu = document.getElementById("sideMenu");
+
+    const overlay = document.getElementById("overlay");
+
+
+    sideMenu.classList.toggle("active");
+
+    overlay.classList.toggle("active");
+
+}
+
+
+
+// Close menu when clicking menu link
+
+document.querySelectorAll(".side-menu a").forEach(link => {
+
+    link.addEventListener("click", function(){
+
+        document.getElementById("sideMenu")
+        .classList.remove("active");
+
+
+        document.getElementById("overlay")
+        .classList.remove("active");
+
+    });
+
+});
