@@ -1,52 +1,27 @@
-// Thailand Lottery Database
+// Thailand Lottery JSON Database
 
-let lotteryResults = [
+let lotteryResults = [];
 
-{
-date:"2026-07-16",
-firstPrize:"639214",
-threeUp:"214",
-twoUp:"14",
-twoDown:"71"
-},
 
-{
-date:"2026-07-01",
-firstPrize:"751495",
-threeUp:"495",
-twoUp:"95",
-twoDown:"62"
-},
+// Load Result Data
 
-{
-date:"2026-06-16",
-firstPrize:"287184",
-threeUp:"184",
-twoUp:"84",
-twoDown:"48"
-},
+fetch("result.json")
+.then(response => response.json())
+.then(data => {
 
-{
-date:"2026-06-01",
-firstPrize:"173770",
-threeUp:"770",
-twoUp:"70",
-twoDown:"95"
-},
+    lotteryResults = data;
 
-{
-date:"2026-05-16",
-firstPrize:"107387",
-threeUp:"387",
-twoUp:"87",
-twoDown:"38"
-}
+    showLatest();
+    showHistory();
+    showStatistics();
 
-];
+});
 
 
 
 // Show Latest Result
+
+function showLatest(){
 
 let latest = lotteryResults[0];
 
@@ -64,6 +39,8 @@ latest.twoUp;
 
 document.getElementById("twoDown").innerText =
 latest.twoDown;
+
+}
 
 
 
@@ -132,7 +109,6 @@ messages.push(
 });
 
 
-
 if(messages.length>0){
 
 result.style.color="#39d98a";
@@ -151,10 +127,16 @@ result.innerText="Number not found.";
 
 
 
+
 // Show History
+
+function showHistory(){
 
 let historyBox =
 document.getElementById("history");
+
+
+historyBox.innerHTML="";
 
 
 lotteryResults.forEach(draw=>{
@@ -185,13 +167,29 @@ historyBox.innerHTML += `
 });
 
 
+}
+
+
 
 
 // Statistics
 
+function showStatistics(){
+
 
 document.getElementById("totalDraws").innerText =
 lotteryResults.length;
+
+
+document.getElementById("common2up").innerText =
+mostCommon("twoUp");
+
+
+document.getElementById("common2down").innerText =
+mostCommon("twoDown");
+
+
+}
 
 
 
@@ -214,11 +212,3 @@ count[a]>count[b]?a:b
 );
 
 }
-
-
-document.getElementById("common2up").innerText =
-mostCommon("twoUp");
-
-
-document.getElementById("common2down").innerText =
-mostCommon("twoDown");
