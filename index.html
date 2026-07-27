@@ -1,742 +1,668 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Thailand Lottery NK | Lottery Results & Information</title>
+<title>Thailand Lottery NK | Results & Statistics</title>
 
-  <meta
-    name="description"
-    content="Thailand Lottery NK - Independent Thailand lottery results, previous results, number checker and statistics."
-  />
+<style>
+:root{
+  --bg:#080b12;
+  --card:#111722;
+  --card2:#192231;
+  --gold:#f5c451;
+  --text:#fff;
+  --muted:#aeb7c6;
+  --green:#39d98a;
+  --red:#ff6874;
+  --border:rgba(255,255,255,.08);
+}
 
-  <style>
-    :root {
-      --bg: #080b12;
-      --card: #111722;
-      --card2: #171f2d;
-      --gold: #f5c451;
-      --gold2: #ffdf7e;
-      --text: #ffffff;
-      --muted: #aeb7c6;
-      --green: #38d996;
-      --red: #ff6874;
-      --border: rgba(255,255,255,0.08);
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+body{
+  background:var(--bg);
+  color:var(--text);
+}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+a{
+  text-decoration:none;
+  color:inherit;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+.container{
+  width:92%;
+  max-width:1200px;
+  margin:auto;
+}
 
-    .container {
-      width: 92%;
-      max-width: 1200px;
-      margin: auto;
-    }
+header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(8,11,18,.95);
+  border-bottom:1px solid var(--border);
+}
 
-    /* HEADER */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(8, 11, 18, 0.94);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid var(--border);
-    }
+.navbar{
+  height:72px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    .navbar {
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+.logo{
+  font-size:23px;
+  font-weight:bold;
+}
 
-    .logo {
-      font-size: 23px;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-    }
+.logo span{
+  color:var(--gold);
+}
 
-    .logo span {
-      color: var(--gold);
-    }
+nav{
+  display:flex;
+  gap:25px;
+}
 
-    nav {
-      display: flex;
-      gap: 26px;
-      align-items: center;
-    }
+nav a{
+  color:var(--muted);
+  font-size:14px;
+}
 
-    nav a {
-      color: var(--muted);
-      font-size: 14px;
-      transition: 0.3s;
-    }
+nav a:hover{
+  color:var(--gold);
+}
 
-    nav a:hover {
-      color: var(--gold);
-    }
+.hero{
+  padding:100px 0;
+  background:
+  radial-gradient(circle at 80% 20%,rgba(245,196,81,.13),transparent 35%),
+  linear-gradient(135deg,#080b12,#101722);
+}
 
-    .menu-btn {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-    }
+.hero h1{
+  font-size:clamp(40px,6vw,70px);
+  line-height:1.1;
+}
 
-    /* HERO */
-    .hero {
-      min-height: 470px;
-      display: flex;
-      align-items: center;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(245,196,81,0.12), transparent 35%),
-        linear-gradient(135deg, #080b12, #101722);
-    }
+.hero h1 span{
+  color:var(--gold);
+}
 
-    .hero-content {
-      max-width: 720px;
-    }
+.hero p{
+  color:var(--muted);
+  max-width:650px;
+  font-size:17px;
+  margin:22px 0;
+}
 
-    .badge {
-      display: inline-block;
-      color: var(--gold);
-      border: 1px solid rgba(245,196,81,0.3);
-      background: rgba(245,196,81,0.08);
-      padding: 7px 14px;
-      border-radius: 30px;
-      font-size: 13px;
-      margin-bottom: 20px;
-    }
+.btn{
+  display:inline-block;
+  border:0;
+  cursor:pointer;
+  background:var(--gold);
+  color:#111;
+  padding:13px 22px;
+  border-radius:8px;
+  font-weight:bold;
+}
 
-    .hero h1 {
-      font-size: clamp(38px, 6vw, 68px);
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
+section{
+  padding:70px 0;
+}
 
-    .hero h1 span {
-      color: var(--gold);
-    }
+.section-title{
+  text-align:center;
+  margin-bottom:35px;
+}
 
-    .hero p {
-      color: var(--muted);
-      font-size: 17px;
-      max-width: 620px;
-      margin-bottom: 28px;
-    }
+.section-title h2{
+  font-size:32px;
+}
 
-    .btn {
-      display: inline-block;
-      background: var(--gold);
-      color: #111;
-      padding: 13px 22px;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s;
-      margin-right: 10px;
-    }
+.section-title p{
+  color:var(--muted);
+  margin-top:8px;
+}
 
-    .btn:hover {
-      background: var(--gold2);
-      transform: translateY(-2px);
-    }
+.result-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:30px;
+}
 
-    .btn-outline {
-      background: transparent;
-      color: var(--gold);
-      border: 1px solid var(--gold);
-    }
+.result-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid var(--border);
+  padding-bottom:20px;
+  margin-bottom:25px;
+}
 
-    .btn-outline:hover {
-      background: var(--gold);
-      color: #111;
-    }
+.badge{
+  background:rgba(245,196,81,.1);
+  border:1px solid rgba(245,196,81,.3);
+  color:var(--gold);
+  padding:7px 13px;
+  border-radius:20px;
+  font-size:13px;
+}
 
-    /* SECTION */
-    section {
-      padding: 70px 0;
-    }
+.result-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+.number-box{
+  background:var(--card2);
+  border:1px solid var(--border);
+  border-radius:12px;
+  text-align:center;
+  padding:22px;
+}
 
-    .section-title h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
+.number-box h4{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:10px;
+}
 
-    .section-title p {
-      color: var(--muted);
-    }
+.number{
+  color:var(--gold);
+  font-size:32px;
+  font-weight:bold;
+  letter-spacing:3px;
+}
 
-    /* RESULT CARD */
-    .result-card {
-      background:
-        linear-gradient(145deg, rgba(245,196,81,0.12), transparent),
-        var(--card);
-      border: 1px solid rgba(245,196,81,0.22);
-      border-radius: 18px;
-      padding: 30px;
-      box-shadow: 0 15px 50px rgba(0,0,0,0.25);
-    }
+.search-box{
+  display:flex;
+  gap:10px;
+  max-width:650px;
+  margin:0 auto 30px;
+}
 
-    .result-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 20px;
-      margin-bottom: 25px;
-    }
+.search-box input{
+  flex:1;
+  padding:15px;
+  background:var(--card2);
+  border:1px solid var(--border);
+  color:white;
+  border-radius:8px;
+  outline:none;
+}
 
-    .result-header h3 {
-      font-size: 22px;
-    }
+.table-box{
+  overflow-x:auto;
+  background:var(--card);
+  border-radius:15px;
+  border:1px solid var(--border);
+}
 
-    .date {
-      color: var(--muted);
-      font-size: 14px;
-    }
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:700px;
+}
 
-    .result-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
+th,td{
+  padding:17px;
+  text-align:center;
+  border-bottom:1px solid var(--border);
+}
 
-    .number-box {
-      background: var(--card2);
-      border-radius: 12px;
-      padding: 22px;
-      text-align: center;
-      border: 1px solid var(--border);
-    }
+th{
+  color:var(--gold);
+  background:var(--card2);
+}
 
-    .number-box h4 {
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 10px;
-    }
+td{
+  color:var(--muted);
+}
 
-    .number {
-      color: var(--gold);
-      font-size: 34px;
-      font-weight: bold;
-      letter-spacing: 4px;
-    }
+td strong{
+  color:white;
+}
 
-    /* FEATURES */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
+.checker{
+  max-width:650px;
+  margin:auto;
+  text-align:center;
+  background:var(--card);
+  padding:30px;
+  border-radius:16px;
+  border:1px solid var(--border);
+}
 
-    .feature-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      padding: 25px;
-      transition: 0.3s;
-    }
+.checker input{
+  width:100%;
+  padding:15px;
+  margin:20px 0;
+  background:var(--card2);
+  color:white;
+  border:1px solid var(--border);
+  border-radius:8px;
+  font-size:18px;
+  text-align:center;
+}
 
-    .feature-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(245,196,81,0.4);
-    }
+#checkResult{
+  margin-top:18px;
+  font-weight:bold;
+}
 
-    .feature-icon {
-      font-size: 30px;
-      margin-bottom: 15px;
-    }
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
 
-    .feature-card h3 {
-      margin-bottom: 8px;
-    }
+.stat{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:30px;
+  text-align:center;
+}
 
-    .feature-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
+.stat h3{
+  color:var(--gold);
+  font-size:35px;
+}
 
-    /* STATS */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
+.stat p{
+  color:var(--muted);
+}
 
-    .stat-card {
-      background: var(--card);
-      padding: 28px;
-      border-radius: 15px;
-      border: 1px solid var(--border);
-      text-align: center;
-    }
+.disclaimer{
+  background:rgba(255,104,116,.08);
+  border:1px solid rgba(255,104,116,.25);
+  border-radius:12px;
+  padding:22px;
+  color:#ffc3c7;
+}
 
-    .stat-card h3 {
-      font-size: 35px;
-      color: var(--gold);
-    }
+footer{
+  background:#05070b;
+  border-top:1px solid var(--border);
+  text-align:center;
+  padding:35px;
+  color:var(--muted);
+}
 
-    .stat-card p {
-      color: var(--muted);
-    }
+footer strong{
+  color:var(--gold);
+}
 
-    /* CHECKER */
-    .checker {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 30px;
-      max-width: 700px;
-      margin: auto;
-      text-align: center;
-    }
+@media(max-width:800px){
 
-    .checker input {
-      width: 100%;
-      padding: 15px;
-      border: none;
-      outline: none;
-      border-radius: 8px;
-      margin: 20px 0;
-      background: #202a39;
-      color: white;
-      font-size: 18px;
-      text-align: center;
-    }
+  nav{
+    display:none;
+  }
 
-    #checkResult {
-      margin-top: 18px;
-      font-weight: bold;
-    }
+  .result-grid,
+  .stats{
+    grid-template-columns:1fr;
+  }
 
-    /* DISCLAIMER */
-    .disclaimer {
-      background: rgba(255, 104, 116, 0.08);
-      border: 1px solid rgba(255, 104, 116, 0.25);
-      border-radius: 12px;
-      padding: 22px;
-      color: #ffc3c7;
-      font-size: 14px;
-    }
+  .result-top{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+  }
 
-    /* FOOTER */
-    footer {
-      background: #05070b;
-      border-top: 1px solid var(--border);
-      padding: 35px 0;
-      text-align: center;
-    }
-
-    footer p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    footer strong {
-      color: var(--gold);
-    }
-
-    /* MOBILE */
-    @media (max-width: 800px) {
-      nav {
-        display: none;
-        position: absolute;
-        top: 72px;
-        left: 0;
-        width: 100%;
-        background: #0b1018;
-        flex-direction: column;
-        padding: 20px;
-        gap: 18px;
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-
-      .result-grid,
-      .features,
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .result-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero {
-        min-height: 560px;
-      }
-    }
-  </style>
+  .search-box{
+    flex-direction:column;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="container navbar">
+<header>
+<div class="container navbar">
 
-      <a href="#" class="logo">
-        Thailand <span>Lottery NK</span>
-      </a>
+<a href="#" class="logo">
+Thailand <span>Lottery NK</span>
+</a>
 
-      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#results">Latest Result</a>
+<a href="#history">Previous Results</a>
+<a href="#checker">Number Checker</a>
+<a href="#statistics">Statistics</a>
+</nav>
 
-      <nav id="navMenu">
-        <a href="#home">Home</a>
-        <a href="#results">Results</a>
-        <a href="#checker">Number Checker</a>
-        <a href="#statistics">Statistics</a>
-        <a href="#about">About</a>
-      </nav>
+</div>
+</header>
 
-    </div>
-  </header>
+<section class="hero" id="home">
+<div class="container">
 
+<h1>
+Thailand Lottery<br>
+<span>Results & Information</span>
+</h1>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="container">
+<p>
+Thailand Lottery NK provides lottery results, previous draw information,
+number checking tools and historical statistics in one platform.
+</p>
 
-      <div class="hero-content">
+<a href="#results" class="btn">
+View Latest Result
+</a>
 
-        <div class="badge">
-          Independent Lottery Information Platform
-        </div>
+</div>
+</section>
 
-        <h1>
-          Thailand Lottery<br>
-          <span>Results & Information</span>
-        </h1>
+<section id="results">
 
-        <p>
-          Get lottery results, previous draw information, number checking
-          tools and historical statistics in one simple platform.
-        </p>
+<div class="container">
 
-        <a href="#results" class="btn">
-          View Latest Result
-        </a>
+<div class="section-title">
+<h2>Latest Lottery Result</h2>
+<p>Latest available draw information</p>
+</div>
 
-        <a href="#checker" class="btn btn-outline">
-          Check Number
-        </a>
+<div class="result-card">
 
-      </div>
+<div class="result-top">
 
-    </div>
-  </section>
+<div>
+<h3>Latest Draw</h3>
+<p style="color:#aeb7c6;margin-top:5px;">
+Draw Date: 16 June 2026
+</p>
+</div>
+
+<div class="badge">
+Result Information
+</div>
+
+</div>
 
+<div class="result-grid">
 
-  <!-- LATEST RESULT -->
-  <section id="results">
+<div class="number-box">
+<h4>1st Prize</h4>
+<div class="number">------</div>
+</div>
 
-    <div class="container">
+<div class="number-box">
+<h4>3 Digit Front</h4>
+<div class="number">---</div>
+</div>
 
-      <div class="section-title">
-        <h2>Latest Lottery Result</h2>
-        <p>Thailand Government Lottery draw information</p>
-      </div>
+<div class="number-box">
+<h4>3 Digit Last</h4>
+<div class="number">---</div>
+</div>
 
-      <div class="result-card">
+<div class="number-box">
+<h4>2 Digit Last</h4>
+<div class="number">--</div>
+</div>
 
-        <div class="result-header">
-          <div>
-            <h3>Latest Draw</h3>
-            <div class="date">Draw Date: Coming Soon</div>
-          </div>
+</div>
 
-          <span class="badge">Official Result Update</span>
-        </div>
+</div>
 
-        <div class="result-grid">
+</div>
 
-          <div class="number-box">
-            <h4>1st Prize</h4>
-            <div class="number">------</div>
-          </div>
+</section>
 
-          <div class="number-box">
-            <h4>3 Digit Front</h4>
-            <div class="number">---</div>
-          </div>
+<section id="history">
 
-          <div class="number-box">
-            <h4>3 Digit Last</h4>
-            <div class="number">---</div>
-          </div>
+<div class="container">
 
-          <div class="number-box">
-            <h4>2 Digit Last</h4>
-            <div class="number">--</div>
-          </div>
+<div class="section-title">
+<h2>Previous Lottery Results</h2>
+<p>Search historical draw results</p>
+</div>
 
-          <div class="number-box">
-            <h4>Prize Information</h4>
-            <div class="number">---</div>
-          </div>
+<div class="search-box">
 
-          <div class="number-box">
-            <h4>Status</h4>
-            <div class="number" style="font-size: 20px;">
-              Pending
-            </div>
-          </div>
+<input
+type="text"
+id="searchInput"
+placeholder="Search by date or lottery number..."
+onkeyup="searchResults()">
 
-        </div>
+</div>
 
-      </div>
+<div class="table-box">
 
-    </div>
+<table id="resultTable">
 
-  </section>
+<thead>
+<tr>
+<th>Draw Date</th>
+<th>1st Prize</th>
+<th>3 Digit Front</th>
+<th>3 Digit Last</th>
+<th>2 Digit Last</th>
+</tr>
+</thead>
 
+<tbody>
 
-  <!-- FEATURES -->
-  <section>
+<tr>
+<td>1 June 2026</td>
+<td><strong>------</strong></td>
+<td>---</td>
+<td>---</td>
+<td>--</td>
+</tr>
 
-    <div class="container">
+<tr>
+<td>16 May 2026</td>
+<td><strong>------</strong></td>
+<td>---</td>
+<td>---</td>
+<td>--</td>
+</tr>
 
-      <div class="section-title">
-        <h2>Everything in One Place</h2>
-        <p>Simple tools for lottery information and historical data</p>
-      </div>
+<tr>
+<td>2 May 2026</td>
+<td><strong>------</strong></td>
+<td>---</td>
+<td>---</td>
+<td>--</td>
+</tr>
 
-      <div class="features">
+<tr>
+<td>16 April 2026</td>
+<td><strong>------</strong></td>
+<td>---</td>
+<td>---</td>
+<td>--</td>
+</tr>
 
-        <div class="feature-card">
-          <div class="feature-icon">🎯</div>
-          <h3>Latest Results</h3>
-          <p>
-            View the latest available lottery draw information.
-          </p>
-        </div>
+</tbody>
 
-        <div class="feature-card">
-          <div class="feature-icon">📅</div>
-          <h3>Previous Results</h3>
-          <p>
-            Explore historical draw results and past information.
-          </p>
-        </div>
+</table>
 
-        <div class="feature-card">
-          <div class="feature-icon">🔍</div>
-          <h3>Number Checker</h3>
-          <p>
-            Check a number against the available result data.
-          </p>
-        </div>
+</div>
 
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>Statistics</h3>
-          <p>
-            Explore historical number statistics and data insights.
-          </p>
-        </div>
+</div>
 
-      </div>
+</section>
 
-    </div>
+<section id="checker">
 
-  </section>
+<div class="container">
 
+<div class="section-title">
+<h2>Number Checker</h2>
+<p>Check your number against available result data</p>
+</div>
 
-  <!-- STATISTICS -->
-  <section id="statistics">
+<div class="checker">
 
-    <div class="container">
+<h3>Enter Your Number</h3>
 
-      <div class="section-title">
-        <h2>Lottery Statistics</h2>
-        <p>Historical data overview</p>
-      </div>
+<input
+type="text"
+id="lotteryNumber"
+maxlength="6"
+placeholder="Enter 2, 3 or 6 digit number">
 
-      <div class="stats">
+<button class="btn" onclick="checkNumber()">
+Check Number
+</button>
 
-        <div class="stat-card">
-          <h3>---</h3>
-          <p>Total Draws</p>
-        </div>
+<div id="checkResult"></div>
 
-        <div class="stat-card">
-          <h3>---</h3>
-          <p>Latest Update</p>
-        </div>
+</div>
 
-        <div class="stat-card">
-          <h3>---</h3>
-          <p>Data Status</p>
-        </div>
+</div>
 
-      </div>
+</section>
 
-    </div>
+<section id="statistics">
 
-  </section>
+<div class="container">
 
+<div class="section-title">
+<h2>Historical Statistics</h2>
+<p>Data overview</p>
+</div>
 
-  <!-- NUMBER CHECKER -->
-  <section id="checker">
+<div class="stats">
 
-    <div class="container">
+<div class="stat">
+<h3>---</h3>
+<p>Total Draws</p>
+</div>
 
-      <div class="section-title">
-        <h2>Number Checker</h2>
-        <p>Enter a number to check against the current result</p>
-      </div>
+<div class="stat">
+<h3>---</h3>
+<p>Available Results</p>
+</div>
 
-      <div class="checker">
+<div class="stat">
+<h3>---</h3>
+<p>Last Updated</p>
+</div>
 
-        <h3>Check Your Number</h3>
+</div>
 
-        <input
-          type="text"
-          id="lotteryNumber"
-          maxlength="6"
-          placeholder="Enter 2, 3 or 6 digit number"
-        />
+</div>
 
-        <button class="btn" onclick="checkNumber()">
-          Check Number
-        </button>
+</section>
 
-        <div id="checkResult"></div>
+<section>
 
-      </div>
+<div class="container">
 
-    </div>
+<div class="disclaimer">
 
-  </section>
+<strong>Important Disclaimer</strong><br><br>
 
+Thailand Lottery NK is an independent lottery information platform.
+It is not affiliated with or officially connected to the Thailand
+Government Lottery Office.
 
-  <!-- ABOUT -->
-  <section id="about">
+Lottery results are based on official draws and random chance.
+Historical data and statistics cannot guarantee winning numbers or prizes.
 
-    <div class="container">
+Please follow applicable laws and play responsibly.
 
-      <div class="section-title">
-        <h2>About Thailand Lottery NK</h2>
-      </div>
+</div>
 
-      <div class="disclaimer">
+</div>
 
-        <strong>Important Disclaimer</strong><br><br>
+</section>
 
-        Thailand Lottery NK is an independent lottery information and
-        educational platform. This website is not affiliated with,
-        sponsored by, or officially connected to the Thailand Government
-        Lottery Office.
+<footer>
 
-        <br><br>
+<p>
+© 2026 <strong>Thailand Lottery NK</strong>
+</p>
 
-        Lottery results are based on official lottery draws and random
-        chance. Historical statistics, analysis, tools, or information
-        presented on this website cannot guarantee winning numbers or
-        lottery prizes.
+<p>
+Independent Lottery Results & Information Platform
+</p>
 
-        <br><br>
+</footer>
 
-        Please follow all applicable laws and regulations in your country
-        and play responsibly.
+<script>
 
-      </div>
+function searchResults(){
 
-    </div>
+let input =
+document.getElementById("searchInput")
+.value
+.toLowerCase();
 
-  </section>
+let rows =
+document
+.getElementById("resultTable")
+.getElementsByTagName("tr");
 
+for(let i=1;i<rows.length;i++){
 
-  <!-- FOOTER -->
-  <footer>
+let text =
+rows[i]
+.innerText
+.toLowerCase();
 
-    <div class="container">
+rows[i].style.display =
+text.includes(input)
+? ""
+: "none";
 
-      <p>
-        © 2026 <strong>Thailand Lottery NK</strong>.
-        All Rights Reserved.
-      </p>
+}
 
-      <p>
-        Independent Lottery Results & Information Platform
-      </p>
+}
 
-    </div>
+function checkNumber(){
 
-  </footer>
+let number =
+document
+.getElementById("lotteryNumber")
+.value
+.trim();
 
+let result =
+document
+.getElementById("checkResult");
 
-  <!-- JAVASCRIPT -->
-  <script>
+if(!number){
 
-    function toggleMenu() {
-      document
-        .getElementById("navMenu")
-        .classList.toggle("active");
-    }
+result.style.color="#ff6874";
+result.innerText="Please enter a number.";
 
+return;
+}
 
-    function checkNumber() {
+if(!/^[0-9]+$/.test(number)){
 
-      const number =
-        document
-        .getElementById("lotteryNumber")
-        .value
-        .trim();
+result.style.color="#ff6874";
+result.innerText="Please enter numbers only.";
 
-      const result =
-        document
-        .getElementById("checkResult");
+return;
+}
 
-      if (!number) {
-        result.style.color = "#ff6874";
-        result.innerText =
-          "Please enter a lottery number.";
-        return;
-      }
+result.style.color="#f5c451";
+result.innerText=
+"Number received. The result database will be connected in the next version.";
 
-      if (!/^[0-9]+$/.test(number)) {
-        result.style.color = "#ff6874";
-        result.innerText =
-          "Please enter numbers only.";
-        return;
-      }
+}
 
-      result.style.color = "#f5c451";
-      result.innerText =
-        "Number received. Result database will be connected in the next version.";
-
-    }
-
-  </script>
+</script>
 
 </body>
 </html>
