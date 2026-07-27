@@ -644,47 +644,53 @@ function searchResults(){
 }
 
 
-function checkNumber(){
+function checkNumber() {
 
-  let number =
-    document
-    .getElementById("lotteryNumber")
-    .value
-    .trim();
+  let number = document.getElementById("lotteryNumber").value.trim();
+  let result = document.getElementById("checkResult");
 
-  let result =
-    document
-    .getElementById("checkResult");
-
-
-  if(!number){
-
+  if (!number) {
     result.style.color = "#ff6874";
-
-    result.innerText =
-      "Please enter a lottery number.";
-
+    result.innerText = "Please enter a lottery number.";
     return;
-
   }
-
-
-  if(!/^[0-9]+$/.test(number)){
-
-    result.style.color = "#ff6874";
-
-    result.innerText =
-      "Please enter numbers only.";
-
-    return;
-
-  }
-
 
   let found = false;
+  let message = "";
 
-  let matchedDate = "";
+  lotteryResults.forEach(draw => {
 
+    if (number === draw.firstPrize) {
+      found = true;
+      message = "🎉 1st Prize Winner! Draw Date: " + draw.date;
+    }
+
+    if (number === draw.threeUp) {
+      found = true;
+      message = "🎉 3Up Winner! Draw Date: " + draw.date;
+    }
+
+    if (number === draw.twoUp) {
+      found = true;
+      message = "🎉 2Up Winner! Draw Date: " + draw.date;
+    }
+
+    if (number === draw.twoDown) {
+      found = true;
+      message = "🎉 2Down Winner! Draw Date: " + draw.date;
+    }
+
+  });
+
+  if (found) {
+    result.style.color = "#39d98a";
+    result.innerText = message;
+  } else {
+    result.style.color = "#ff6874";
+    result.innerText = "Number not found.";
+  }
+
+}
 
   lotteryResults.forEach(draw => {
 
