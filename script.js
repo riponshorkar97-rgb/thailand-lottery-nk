@@ -9,7 +9,7 @@ fetch("result.json")
 .then(response => response.json())
 .then(data => {
 
-    lotteryResults = data;
+    lotteryResults = data.previous;
 
     showLatest();
     showHistory();
